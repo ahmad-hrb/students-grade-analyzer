@@ -13,3 +13,10 @@ def display_student_summary():
             grade = float(input("Enter Student Grade:"))
         list_grade.append(grade)
     print("Students Name :" , list_name ,"," , "Students Garde" , list_grade)
+
+     # function to get average
+    def get_avg_grade():
+        avg = sum(list_grade) / len(list_grade)
+        print("Te Average Of Grades Is :",avg )
+        return avg 
+    get_avg_grade()
