@@ -20,7 +20,7 @@ def display_student_summary():
         print("Te Average Of Grades Is :",avg )
         return avg 
     get_avg_grade()
-    
+
       # function to get the highest grade
     def get_heighest_grade():
         greater_grd = list_grade[0]
@@ -34,5 +34,15 @@ def display_student_summary():
         print("the name of the student have highest grade is :" , list_name[num])
     get_heighest_grade()
 display_student_summary()
+
+# function to count the number of the student passed
+def count_passed(list_grade):
+    count = 0
+    for i in  range(len(list_grade)) :
+        if list_grade[i] >= 65:
+          count +=1
+    print("the number of students passed is :" , count)
+    return count
+count_passed(list_grade)
 
     
