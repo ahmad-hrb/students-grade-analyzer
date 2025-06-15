@@ -1,5 +1,4 @@
-list_grade = []
-list_name = []
+
 
 # function for inputs
 def display_student_summary():
@@ -8,32 +7,35 @@ def display_student_summary():
         name = input("Ente Student name:")
         list_name.append(name)
         grade = float(input("Enter Student Grade:"))
-        if grade > 100 :
+        while grade > 100 :
             print("Please Enter Correct Grade")
             grade = float(input("Enter Student Grade:"))
         list_grade.append(grade)
     print("Students Name :" , list_name ,"," , "Students Garde" , list_grade)
 
+
      # function to get average
-    def get_avg_grade():
+def get_avg_grade():
         avg = sum(list_grade) / len(list_grade)
         print("Te Average Of Grades Is :",avg )
         return avg 
-    get_avg_grade()
 
-      # function to get the highest grade
-    def get_heighest_grade():
-        greater_grd = list_grade[0]
-        num = 0
-        for i , ele in enumerate(list_grade):
-            
-            if ele > greater_grd :
-                greater_grd = ele
-                num = i
-        print("the highest grade is :" , greater_grd)
-        print("the name of the student have highest grade is :" , list_name[num])
-    get_heighest_grade()
-display_student_summary()
+
+   # function to get the highest grade
+def get_heighest_grade():
+    highest = max(list_grade)  # Find the highest grade
+    h_grade = highest
+    n_grade = []
+
+    # Loop through the list to find all students with the highest grade
+    for i, grade in enumerate(list_grade):
+        if grade == highest:
+            n_grade.append(list_name[i])
+
+    print("The highest grade is:", h_grade)
+    print("The name(s) of the student(s) with the highest grade:", n_grade)
+
+
 
 # function to count the number of the student passed
 def count_passed(list_grade):
@@ -43,6 +45,11 @@ def count_passed(list_grade):
           count +=1
     print("the number of students passed is :" , count)
     return count
+list_grade = []
+list_name = []
+display_student_summary()
+get_avg_grade()
+get_heighest_grade()
 count_passed(list_grade)
 
     
